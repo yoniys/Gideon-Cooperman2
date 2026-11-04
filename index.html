@@ -1030,6 +1030,10 @@
         <input id="fphone" name="phone" type="tel" placeholder="טלפון" required>
       </div>
       <div class="field">
+        <label for="femail">אימייל</label>
+        <input id="femail" name="email" type="email" placeholder="אימייל" dir="ltr" style="text-align:right;">
+      </div>
+      <div class="field">
         <label for="fmsg">במה אוכל לעזור?</label>
         <textarea id="fmsg" name="message" placeholder="במה אוכל לעזור?"></textarea>
       </div>
@@ -1055,6 +1059,8 @@
           body: JSON.stringify({
             'שם מלא': fd.get('name'),
             'טלפון': fd.get('phone'),
+          'אימייל': fd.get('email'),
+          _replyto: fd.get('email') || undefined,
             'הודעה': fd.get('message'),
             _subject: 'פנייה חדשה מהאתר',
             _captcha: false,
